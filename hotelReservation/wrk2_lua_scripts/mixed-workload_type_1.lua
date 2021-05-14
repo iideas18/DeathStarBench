@@ -114,14 +114,14 @@ request = function()
   local user_ratio        = 0.005
   local reserve_ratio     = 0.005
 
-  local coin = math.random()
+  local coin =0.5 -- math.random()
   if coin < search_ratio then
     return search_hotel()
-  elseif coin < search_ratio + recommend_ratio then
-    return recommend()
-  elseif coin < search_ratio + recommend_ratio + user_ratio then
-    return user_login()
-  else 
-    return reserve()
+  -- elseif coin < search_ratio + recommend_ratio then
+  --   return recommend()
+  -- elseif coin < search_ratio + recommend_ratio + user_ratio then
+  --   return user_login()
+  -- else 
+  --   return reserve()
   end
 end
