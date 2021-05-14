@@ -25,11 +25,11 @@ spec:
       labels:
         io.kompose.service: geo
     spec:
-      nodeName: r08
+      nodeName: tracing112
       containers:
         - command:
             - geo
-          image: salehsedghpour/hotel_reserv_geo_single_node
+          image: iideas2019/hotel_reserv_geo_single_node
           name: hotel-reserv-geo
           ports:
             - containerPort: 8083

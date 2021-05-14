@@ -25,7 +25,7 @@ spec:
       labels:
         io.kompose.service: consul
     spec:
-      nodeName: r07
+      nodeName: tracing112
       containers:
         - image: consul:latest
           name: consul

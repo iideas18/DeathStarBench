@@ -1,0 +1,40 @@
+Using node hostname tracing112 
+
+1. change nodename to tracing112
+2. change pv: selector hostnames to tracing112
+3.
+(adabench_dl) [root@tracing112 ~]# mkdir -p  /data/volumes/user-pv
+(adabench_dl) [root@tracing112 ~]# mkdir -p /data/volumes/profile-pv
+(adabench_dl) [root@tracing112 ~]# mkdir -p /data/volumes/geo-pv
+(adabench_dl) [root@tracing112 ~]# mkdir -p /data/volumes/rate-pv
+(adabench_dl) [root@tracing112 ~]# mkdir -p /data/volumes/recommendation-pv
+(adabench_dl) [root@tracing112 ~]# mkdir -p /data/volumes/reservation-pv
+
+
+pip install aiohttp
+sudo yum install openssl-devel
+sudo yum install zlib-devel
+sudo yum install readline-devel
+sudo dnf group install "Development Tools"
+
+wget http://www.lua.org/ftp/lua-5.1.5.tar.gz
+tar -zxvf lua-5.1.5.tar.gz
+cd lua-5.1.5/
+make linux test
+sudo make install
+
+wget https://luarocks.github.io/luarocks/releases/luarocks-3.0.4.tar.gz
+tar -zxvf luarocks-3.0.4.tar.gz
+cd luarocks-3.0.4/
+./configure
+make
+sudo make install
+sudo make bootstrap
+sudo ./luarocks install luasocket
+
+
+ 
+lua -e "socket = require('socket')"
+lua: (command line):1: module 'socket' not found:
+export lua_path=xxx
+export LUA_CPATH=xxx

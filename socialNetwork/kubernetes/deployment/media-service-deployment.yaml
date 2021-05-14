@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: media-service
+  name: media-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: media-service
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: media-service
+    spec:
+      nodeName: tracing112
+      containers:
+        - command:
+            - MediaService
+          image: yg397/social-network-microservices:latest
+          name: media-service
+          resources:
+            limits:
+              cpu: 1000m
+          volumeMounts:
+            - mountPath: /social-network-microservices/config
+              name: media-service-claim0
+      hostname: media-service
+      restartPolicy: Always
+      volumes:
+        - name: media-service-claim0
+          persistentVolumeClaim:
+            claimName: media-service-claim0
+status: {}

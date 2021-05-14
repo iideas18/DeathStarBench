@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: reservation
+  name: reservation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: reservation
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: reservation
+    spec:
+      containers:
+        - command:
+            - reservation
+          env:
+            - name: TLS
+          image: hotel_reserv_rsv_single_node
+          name: hotel-reserv-reservation
+          ports:
+            - containerPort: 8087
+          resources: {}
+      restartPolicy: Always
+status: {}

@@ -25,11 +25,11 @@ spec:
       labels:
         io.kompose.service: user
     spec:
-      nodeName: r08
+      nodeName: tracing112
       containers:
         - command:
             - user
-          image: salehsedghpour/hotel_reserv_user_single_node
+          image: iideas2019/hotel_reserv_user_single_node
           name: hotel-reserv-user
           ports:
             - containerPort: 8086
