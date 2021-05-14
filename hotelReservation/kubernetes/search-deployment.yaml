@@ -29,7 +29,7 @@ spec:
       containers:
         - command:
             - search
-          image: iideas/hotel_reserv_search_single_node
+          image: iideas2019/hotel_reserv_search_single_node
           name: hotel-reserv-search
           ports:
             - containerPort: 8082

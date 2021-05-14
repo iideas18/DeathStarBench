@@ -29,7 +29,7 @@ spec:
       containers:
         - command:
             - recommendation
-          image: iideas/hotel_reserv_recommendation_single_node
+          image: iideas2019/hotel_reserv_recommendation_single_node
           name: hotel-reserv-recommendation
           ports:
             - containerPort: 8085

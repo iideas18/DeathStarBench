@@ -29,7 +29,7 @@ spec:
       containers:
         - command:
             - user
-          image: iideas/hotel_reserv_user_single_node
+          image: iideas2019/hotel_reserv_user_single_node
           name: hotel-reserv-user
           ports:
             - containerPort: 8086

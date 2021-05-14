@@ -1,12 +1,12 @@
 version: "3"
 services:
 #   Enables resolving container hostnames from host machine
-  dns-media:
-    image: defreitas/dns-proxy-server
-    volumes:
-      - /opt/dns-proxy-server/conf:/app/conf
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /etc/resolv.conf:/etc/resolv.conf
+  # dns-media:
+  #   image: defreitas/dns-proxy-server
+  #   volumes:
+  #     - /opt/dns-proxy-server/conf:/app/conf
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #     - /etc/resolv.conf:/etc/resolv.conf
 
   unique-id-service:
     image: yg397/media-microservices
