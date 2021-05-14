@@ -237,7 +237,7 @@ services:
       - ./config:/social-network-microservices/config
 
   nginx-thrift:
-    image: yg397/openresty-thrift:xenial
+    image: iideas2019/openresty-thrift:latest
     hostname: nginx-thrift
     ports:
       - 8080:8080
